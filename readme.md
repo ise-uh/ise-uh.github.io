@@ -2,7 +2,7 @@
 
 Hello, I am working on Intelligent Systems!
 
-## About Me
+## About
 Add content about your research, team, or anything you want to showcase.
 
 ## Research
