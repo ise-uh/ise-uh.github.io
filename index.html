@@ -4,12 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Website</title>
+    <style>
+        /* Reset margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #34495e;
+        }
+
+        /* Style for the navigation links */
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3498db;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #2980b9;
+        }
+
+        /* Add spacing between links */
+        nav a:not(:last-child) {
+            margin-right: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello, ISE!</h1>
-    <p>ISE!</p>
+    <p>Welcome to the ISE website!</p>
 
-    <!-- Navigation links inside the body -->
     <nav>
         <a href="people.html">About</a>
         <a href="publications.html">Contact</a>
