@@ -5,7 +5,7 @@ Hello, I am working on Intelligent Systems!
 ## About
 Add content about your research, team, or anything you want to showcase.
 
-## Research
+## [Research](research.md)
 Add information about your research projects.
 
 ## Contact
