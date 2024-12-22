@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent System Engineering Research Group</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #0d47a1;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 35, 126, 0.9), rgba(13, 71, 161, 0.9));
+            color: white;
+            padding: 100px 0;
+        }
+
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+
+        .research-card {
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .team-member {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio-text {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Publication styles */
+        .publication-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .publication-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .authors {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .venue {
+            color: #888;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .abstract {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .publication-links {
+            margin-top: 15px;
+        }
+
+        .publication-links .btn {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* Video styles */
+        .video-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .play-icon {
+            color: white;
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+
+        .video-modal-content {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .close-video {
+            position: absolute;
+            right: 0;
+            top: -40px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            background: #000;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ISE Research Group</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4">Intelligent System Engineering</h1>
+            <p class="lead">The Intelligent Systems Engineering Research Group is a dynamic research group within the School of Physics, Engineering, and Computer Science at the University of Hertfordshire. 
+                Led by Professor Pouria Sarhadi, the group is dedicated to advancing the frontiers of intelligent systems through cutting-edge research and innovation.
+
+
+            </p>
+        </div>
+    </section>
+
+    <!-- Research Areas -->
+    <section id="research" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Research Areas</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card research-card">
+                        <img src="img/arch.png" class="card-img-top" alt="Autonomous Systems">
+                        <div class="card-body">
+                            <h5 class="card-title">Autonomous Systems</h5>
+                            <p class="card-text">The Autonomous Systems research group is dedicated to designing intelligent, self-operating systems that can make decisions, adapt to their surroundings, and perform tasks without human intervention</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card research-card">
+                        <img src="img/adap.jpg" class="card-img-top" alt="Adaptive Control">
+                        <div class="card-body">
+                            <h5 class="card-title">Adaptive Control</h5>
+                            <p class="card-text">The Adaptive Control research area focuses on developing advanced control strategies capable of dynamically adjusting to changing environments, system uncertainties, and disturbances. By leveraging state-of-the-art algorithms, including machine learning and optimization techniques, this group enhances the performance, stability, and robustness of control systems across a variety of applications</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card research-card">
+                        <img src="img/sys.png" class="card-img-top" alt="Systems Engineering">
+                        <div class="card-body">
+                            <h5 class="card-title">Systems Engineering</h5>
+                            <p class="card-text">Design and optimization of complex engineering systems using AI-driven approaches.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: blue;">Our Team</h2>
+
+            <!-- Group Lead -->
+            <h3 class="mb-4 team-category" style="color: blue;">Group Lead</h3>
+            <div class="row mb-5">
+                <div class="col-md-3">
+                    <img src="img/Pouria_IEEE.png" alt="Professor Pouria Sarhadi" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Professor Pouria Sarhadi</h4>
+                    <p class="member-bio">
+                        Pouria Sarhadi (BEng, MSc and PhD) is a Senior Lecturer (A. Professor) in the School of Physics, Engineering & Computer Science at the University of Hertfordshire. He has worked as a research fellow at Queen's University Belfast (2021-2022), University of Surrey (2019-2021) and as an adjunct professor at the Babol Noshirvani University of Technology BNUT (2016-2018). He has held key roles to play in the UK Research and Innovation (UKRI) and European Horizon projects and provided consultancy to different industries. He is a Chartered Engineer (CEng), Member of IET (MIET), and also recognised as a UK 'Global Talent' by the UKRI. In the past 15 years, he has conducted research on a wide range of ground, marine, and aerial autonomous vehicles which has resulted in more than 50 peer-reviewed journal publications. Pouria is a member of the International Federation of Automatic Control (IFAC) and the Editorial Board of Applied Ocean Research (Elsevier). Furthermore, he is passionate about transforming academic theories into industrial products. Pouria's research studies include: control theory and applications, adaptive control and machine learning, autonomous vehicles as well as systems engineering. </p>
+                    <p class="member-email">E-mail: smith.j@university.edu</p>
+                </div>
+            </div>
+
+            <!-- PhD Students -->
+            <h3 class="mb-4 team-category" style="color: blue;">Current PhD Students</h3>
+            
+            <!-- PhD Student 1 -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Reza_J.jpg" alt="Reza Jafari" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Reza Jafari</h4>
+                    <p class="member-bio">
+                        Reza Jafari holds a BSc and a MSc in Electrical Engineering from K. N. Toosi University of Technology. He is currently pursuing a PhD at the University of Hertfordshire, where his research focuses on improving electric vehicle (EV) dynamics and energy management through advanced reinforcement learning (RL) methods.
+He has hands-on experience with a range of industry-standard tools, including ANSYS Maxwell and COMSOL Multiphysics for electromagnetic analysis, as well as MATLAB/Simulink and Python for system modelling, control design, and machine learning algorithm development. His research interests encompass sustainable mobility, intelligent energy management, and the integration of renewable energy within transportation systems.    
+                    </p>
+                    <p class="member-email">E-mail: wilson.j@university.edu</p>
+                </div>
+            </div>
+
+            <!-- PhD Student 2 -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Klins.png" alt="Klinsmann Agyei" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Klinsmann Agyei</h4>
+                    <p class="member-bio">
+                        Klinsmann Agyei holds a BSc in Mechanical Engineering from the University of Energy and Natural Resources and an MSc in Robotics and Artificial Intelligence from ITMO University. He is currently a PhD researcher at the University of Hertfordshire, focusing on advancing adaptive control systems through the integration of machine learning techniques. Klinsmann is proficient in Python, MATLAB, and C++, as well as expertise in CAD tools such as SolidWorks. He is experienced in communication frameworks like ROS 2, enabling seamless interaction with robotic systems. His research interests span adaptive control, data-driven decision-making, and the application of advanced machine learning algorithms to enhance system performance and robustness. 
+                        <p class="member-email">k.agyei@herts.ac.uk</p>
+                    </div>
+            
+                    </div>
+
+            <!-- PhD Student 3 -->
+            <!-- PhD Student 2 -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Pegah.png" alt="Pegah Janbakhsh" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Pegah Janbakhsh</h4>
+                    <p class="member-bio">
+                        Pegah holds a BEng in Aerospace Engineering and is currently a part-time PhD student at the University of Hertfordshire. Her research focuses on developing amphibious fixed wing Unmanned Aerial Vehicles (UAS) with multi-purpose applications. She investigates of the systems and algorithms for autonomously take off and landing in land and water environments. She is a UAS Pilot and serves as the Principal Technical Officer and Lab Manager for Aerospace, and is also the Safety Lead for the School of Physics, Engineering, and Computer Science (SPECS) at the University of Hertfordshire. Pegah is a Fellow of the Higher Education Academy (FHEA). She is registered as an Incorporated Engineer (IEng) with the Engineering Council and is an Associate Member of the Royal Aeronautical Society (AMRAeS). 
+                        
+                    </div>
+            
+                    </div>
+
+            <!-- Past PhD Students -->
+            <h3 class="mb-4 team-category" style="color: blue;">Past PhD Students</h3>
+            
+            <!-- Past PhD Student 1-->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Sajid.jpg" alt="Sajid Fadleseed" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Sajid Fadleseed</h4>
+                    <p class="member-bio">
+                        Sajid Fadleseed (researcher) has received an MSc and a PhD in computer science from the University of Hertfordshire. His studies were supported by the National University, Sudan (NUSU). His current research interests include mixed-criticality scheduling, real-time embedded systems, fault tolerance, NoC architectures, and optimization techniques. Sajid has lectured modules in embedded systems and fault tolerance algorithms. He has conducted research on DRT services and Software Integrity Levels (SIL).</p>
+                </div>
+            </div>
+
+            <!-- Past PhD Student 2-->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Hossein_R.jpg" alt="Hossein Rouzegar" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Hossein Rouzegar</h4>
+                    <p class="member-bio">
+                        Hossein Rouzegar is a researcher at the Space Communication Research Group at the i2CAT Foundation in Barcelona, Spain where he leads the Software-defined Satellite research line. He earned his BSc in Electrical Engineering in 2011, MSc in Electrical Engineering and Control in 2014, in Iran. In 2020, he completed his PhD in Electrical Engineering at Babol Noshirvani University of Technology, Babol with a focus on spacecraft formation flying control. In 2018, he served as a visiting researcher at the Universitat Politècnica de Catalunya (UPC), collaborating with the Institute of Space Studies of Catalonia (IEEC) in Barcelona. From 2022 to 2023, he was an assistant professor at Semnan University, Iran. His research interests include spacecraft formation flying control, optimal control, satellite networks, SDN/NFV in satellite constellations, and satellite flexible payload technologies. </div>
+            </div>
+
+            <!-- Past PhD Student 3-->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Javad.png" alt="Javad Enayati" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Javad Enayati</h4>
+                    <p class="member-bio">
+                        Javad Enayati is currently R&D manager of Sander Elektronik AG in Switzerland specialising in intelligent emergency systems. He received a BSc degree in power electrical engineering from the Nooshirvani University Of technology, in 2009 an MSc and a PhD degrees in power electrical engineering from University of Semnan, in 2012 and 2017, respectively. His research interests include embedded system development, state estimation, system identification, wireless mesh systems, and automotive systems reliability.</div>
+            </div>
+
+            <!-- Past PhD Student 4-->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Narjes.jpg" alt="Narjes Ahmadian" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Narjes Ahmadian</h4>
+                    <p class="member-bio">
+                        Narjes Ahmadian is currently an Assistant Professor at the Department of Electrical Engineering, University of Science and Technology of Mazandaran, Behshahr, Iran. She received a BSc degree in Electrical Engineering from Guilan University, Rasht, Iran, in 2012, and the MSc and PhD degrees in Control Engineering from Babol Noshirvani University of Technology, Babol, Iran, in 2015 and 2020, respectively. Her PhD research was focused on multilayer integrated adaptive controllers for vehicle lateral dynamics and steering system. She was an exemplary student in all her academic levels. Dr. Ahmadian has authored several peer-reviewed journal and conference papers. She has established two research laboratories and participated in the navigation research team's setup projects. Her research interests include Adaptive control, vehicle dynamics, navigation, and aerospace. </div>
+            </div>
+
+            <!-- Past PhD Student 5-->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Behnaz.png" alt="Behnaz Hadi" class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Behnaz Hadi</h4>
+                    <p class="member-bio">
+                        Behnaz Hadi    
+                    </div>
+            </div>
+
+             <!-- Past PhD Student 5-->
+             <div class="row mb-4">
+                <div class="col-md-3">
+                    <img src="img/Hock.png" alt="Hock C Gan " class="team-photo">
+                </div>
+                <div class="col-md-9">
+                    <h4 class="member-name">Hock C Gan </h4>
+                    <p class="member-bio">
+                        Hock C Gan (researcher) holds a PhD in Computer Science from the University of Hertfordshire.  He is a researcher in various projects and a Visiting Lecturer in the University of Hertfordshire for the School of Engineering and the School of Computer Science. His interests include autonomous systems, machine learning, computer vision, blockchains, IoT security, voice discrimination, brain computer interfacing, software engineering and telecommunications.    
+                    </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Recent Publications</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="publication-list">
+                        <!-- Publication 1 -->
+                        <div class="publication-card mb-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="video-container">
+                                        <!-- Video thumbnail with play button overlay -->
+                                        <div class="video-thumbnail">
+                                            <img src="img/vi.png" alt="Video thumbnail" class="img-fluid">
+                                            <button class="play-button" onclick="playVideo('video1')">
+                                                <i class="play-icon">▶</i>
+                                            </button>
+                                        </div>
+                                        <!-- Video modal -->
+                                        <div id="video1" class="video-modal">
+                                            <div class="video-modal-content">
+                                                <span class="close-video" onclick="closeVideo('video1')">&times;</span>
+                                                <div class="video-embed">
+                                                    <video id="videoPlayer1" width="100%" controls>
+                                                        <source src="video/llm.mp4" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                    <div class="video-placeholder">Video Player</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="publication-details">
+                                        <h4>Large Language Model-based Decision-making for COLREGs and the
+                                            Control of Autonomous Surface Vehicles</h4>
+                                        <p class="authors">Klinsmann, A., Pouria, S., Wasif, N.</p>
+                                        <p class="venue">European Control Conference, 2024</p>
+                                        <p class="abstract">
+                                            Large language models (LLMs) to improve the decision-making and control of autonomous surface vehicles (ASVs) in compliance with the International Regulations for Preventing Collisions at Sea (COLREGs).
+
+                                        </p>
+                                        <div class="publication-links">
+                                            <a href="https://arxiv.org/abs/2411.16587" class="btn btn-primary btn-sm">Paper PDF</a>
+                                            <a href="#" class="btn btn-secondary btn-sm">Project Page</a>
+                                            <a href="#" class="btn btn-info btn-sm">Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Publication 2 -->
+                        <div class="publication-card mb-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="video-container">
+                                        <div class="video-thumbnail">
+                                            <img src="img/adpC.gif" alt="Video thumbnail" class="img-fluid">
+                                            <button class="play-button" onclick="playVideo('video2')">
+                                                <i class="play-icon">▶</i>
+                                            </button>
+                                        </div>
+                                        <div id="video2" class="video-modal">
+                                            <div class="video-modal-content">
+                                                <span class="close-video" onclick="closeVideo('video2')">&times;</span>
+                                                <div class="video-embed">
+                                                    <div class="video-placeholder">Video Player</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="publication-details">
+                                        <h4>Adaptive formation motion planning and control of autonomous underwater vehicles using deep reinforcement learning</h4>
+                                        <p class="authors">Behnaz, H., Alireza, H., Pouria, S.</p>
+                                        <p class="venue">IEEE Journal of Oceanic Engineering, 2024</p>
+                                        <p class="abstract">Creating safe paths in unknown and uncertain environments is a challenging aspect of leader–follower formation control</p>
+                                        <div class="publication-links">
+                                            <a href="https://ieeexplore.ieee.org/abstract/document/10214138" class="btn btn-primary btn-sm">Paper PDF</a>
+                                            <a href="#" class="btn btn-secondary btn-sm">Project Page</a>
+                                            <a href="#" class="btn btn-info btn-sm">Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Intelligent System Engineering Research Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Bio Toggle Function
+        function toggleBio(bioId) {
+            const bioElement = document.getElementById(bioId);
+            const allBios = document.querySelectorAll('.bio-text');
+            
+            // Close all other open bios
+            allBios.forEach(bio => {
+                if (bio.id !== bioId && bio.style.display !== 'none') {
+                    bio.style.display = 'none';
+                }
+            });
+            
+            // Toggle the clicked bio
+            if (bioElement.style.display === 'none') {
+                bioElement.style.display = 'block';
+            } else {
+                bioElement.style.display = 'none';
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Navbar color change on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').style.backgroundColor = 'rgba(26, 35, 126, 0.9)';
+            } else {
+                document.querySelector('.navbar').style.backgroundColor = 'rgba(26, 35, 126, 1)';
+            }
+        });
+
+        // Video Modal Functions
+        function playVideo(modalId, videoSrc) {
+            const modal = document.getElementById(modalId);
+            const videoPlayer = document.getElementById('videoPlayer1');
+            if (modal && videoPlayer) {
+                modal.style.display = 'block';
+                videoPlayer.src = videoSrc;
+                videoPlayer.play();
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeVideo(modalId) {
+            const modal = document.getElementById(modalId);
+            const videoPlayer = document.getElementById('videoPlayer1');
+            if (modal && videoPlayer) {
+                modal.style.display = 'none';
+                videoPlayer.pause();
+                videoPlayer.currentTime = 0;
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('video-modal')) {
+                const videoPlayer = document.getElementById('videoPlayer1');
+                event.target.style.display = 'none';
+                if (videoPlayer) {
+                    videoPlayer.pause();
+                    videoPlayer.currentTime = 0;
+                }
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* Team Section Styles */
+.team-category {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: blue;
+}
+
+.team-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.member-name {
+    color: blue;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.member-email {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .team-photo {
+        max-width: 200px;
+        margin: 0 auto 1rem;
+        display: block;
+    }
+    
+    .member-bio {
+        text-align: left;
+    }
+}
