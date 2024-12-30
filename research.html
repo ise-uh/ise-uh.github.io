@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Projects - ISE Research Team</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ISE Research Team</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <img src="img/logo.png" alt="ISE-UH Research Team Logo" class="hero-logo img-fluid">
+                </div>
+                <div class="col-md-9 text-center">
+                    <h1 class="display-4">Research Projects</h1>
+                    <p class="lead">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <div class="container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="autonomous">Autonomous Systems</button>
+            <button class="filter-btn" data-filter="control">Intelligent Control Systems</button>
+            <button class="filter-btn" data-filter="systems">Systems Engineering</button>
+            
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="row" id="projects-grid">
+            
+            <div class="col-12 project-card" data-categories="autonomous ai">
+                <div class="enhanced-card" data-aos="fade-up">
+                    <!-- Project Header -->
+                    <div class="project-header">
+                        <div class="project-status active">
+                            <span class="status-dot"></span>
+                            Active Research
+                        </div>
+                        <h2 class="project-title">Risk-Aware Motion Planning and Control of Maritime Autonomous Surface Ships (MASS)</h2>
+                        <div class="quick-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Phase: Implementation</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <span>Team Size: 3</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Progress: 75%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Content Tabs -->
+                    <div class="project-tabs">
+                        <div class="tab-controls">
+                            <button class="tab-btn active" data-tab="overview">Overview</button>
+                            <button class="tab-btn" data-tab="technical">Technical Details</button>
+                            <button class="tab-btn" data-tab="gallery">Gallery</button>
+                            <button class="tab-btn" data-tab="achievements">Achievements</button>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div class="tab-content">
+                            <!-- Overview Tab -->
+                            <div class="tab-pane active" id="overview">
+                                <div class="overview-grid">
+                                    <div class="main-content">
+                                        <div class="expandable-text">
+                                            <p class="preview-text">
+                                                Collision avoidance is a critical component of mission planning in all autonomous vehicles. The decision-making algorithms in MASS must adhere to the COLREGs (Convention on the International Regulations for Preventing Collisions at Sea) for obstacle avoidance and manoeuvres.
+                                                
+                                                <span class="fade-overlay"></span>
+                                            </p>
+                                            <div class="full-text">
+                                                <p>
+                                                    However, implementing COLREGs within MASS presents significant challenges. The textual and somewhat ambiguous nature of COLREGs, which were primarily designed for human operators, has long been a barrier to effective algorithmic implementation. Recent advancements in explainable Artificial Intelligence (AI) and machine learning show promise in enabling human-like decision-making.
+                                                </p>
+                                                <p>
+                                                    This research investigates AI-based, risk-aware motion planning and collision avoidance algorithms for MASS. The developed algorithms integrate state-of-the-art AI solutions with classical and resilient local planning and control mechanisms, incorporating Line of Sight (LOS) and Cross Track Error (CTE) for optimal waypoint tracking and disturbance rejection.
+                                                </p>
+                                                <p>
+                                                    For the first time, the application of Large Language Models (LLMs) is proposed to ensure adherence to COLREGs. The proposed decision-making system introduces an innovative online risk index, considering Distance and Time to Closest Point of Approach (DCPA and TCPA), alongside other relevant indices, to maintain safe operational behaviour.
+                                                </p>
+                                            </div>
+                                            <button class="read-more-btn">Read More</button>
+                                        </div>
+                                        <div class="key-highlights">
+                                            <h4>Key Highlights</h4>
+                                            <ul class="highlight-list">
+                                                <li><span class="highlight-icon">🎯</span>First application of LLMs in maritime regulations</li>
+                                                <li><span class="highlight-icon">🤖</span>AI-based risk-aware motion planning</li>
+                                                <li><span class="highlight-icon">📊</span>Innovative online risk index system</li>
+                                                <li><span class="highlight-icon">🔄</span>Integration with classical control mechanisms</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="side-content">
+                                        <div class="project-metrics">
+                                            <h4>Project Metrics</h4>
+                                            <div class="metric-item">
+                                                <div class="metric-label">Research Progress</div>
+                                                <div class="progress-circle" data-progress="75">
+                                                    <div class="progress-text">75%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tag-cloud">
+                                            <h4>Technologies</h4>
+                                            <span class="tag">Maritime Systems</span>
+                                            <span class="tag">AI/ML</span>
+                                            <span class="tag">LLMs</span>
+                                            <span class="tag">Control Systems</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                        
+                        <!-- Technical Details Tab -->
+                        <div class="tab-pane" id="technical">
+                            <div class="technical-details">
+                                <h4>Technical Specifications</h4>
+                                <div class="tech-section">
+                                    <h5>Core Technologies</h5>
+                                    <ul class="tech-list">
+                                        <li>Large Language Models (LLMs)</li>
+                                        <li>Line of Sight (LOS) Navigation</li>
+                                        <li>Cross Track Error (CTE) Control</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-section">
+                                    <h5>Key Algorithms</h5>
+                                    <ul class="tech-list">
+                                        <li>Risk-aware Motion Planning</li>
+                                        <li>COLREGs Compliance Checking</li>
+                                        <li>Obstacle Avoidance</li>
+                                        <li>Path Planning and Optimization</li>
+                                    </ul>
+                                </div>
+                                <div class="implementation-details">
+                                    <h5>Implementation Framework</h5>
+                                    <img src="img/arch.png" alt="MASS Architecture" class="tech-image" style="width: 100%;">
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Tab -->
+                        <div class="tab-pane" id="gallery">
+                            <div class="gallery-grid">
+                                <div class="gallery-item">
+                                    <img src="img/mass/gif1.gif" alt="MASS Simulation 1">
+                                    <div class="gallery-caption">Collision Avoidance Simulation</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="img/mass/gif2.gif" alt="MASS Simulation 2">
+                                    <div class="gallery-caption">Path Planning Demonstration</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="img/mass/gif3.gif" alt="MASS Simulation 3">
+                                    <div class="gallery-caption">Multi-vessel Scenario</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="img/mass/gif4.gif" alt="MASS Simulation 4">
+                                    <div class="gallery-caption">Risk Assessment Visualization</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Achievements Tab -->
+                        <div class="tab-pane" id="achievements">
+                            <div class="achievements-content">
+                                <div class="achievement-item">
+                                    <div class="achievement-icon">🏆</div>
+                                    <div class="achievement-details">
+                                        <h5>First Implementation of LLMs in Maritime Regulations</h5>
+                                        <p>Pioneered the use of Large Language Models for COLREGs interpretation</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon">📊</div>
+                                    <div class="achievement-details">
+                                        <h5>Novel Risk Assessment System</h5>
+                                        <p>Developed innovative online risk index system for maritime operations</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-item">
+                                    <div class="achievement-icon">📜</div>
+                                    <div class="achievement-details">
+                                        <h5>Publications</h5>
+                                        <ul>
+                                            <li>1 Journal Papers</li>
+                                            <li>1 Conference Presentations</li>
+                                            <li>1 Patent Pending</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+            
+
+            <!-- HertsLynx Project -->
+            <div class="col-12 project-card" data-categories="autonomous vehicles">
+                <div class="enhanced-card" data-aos="fade-up">
+                    <div class="project-header hertslynx-header">
+                        <div class="project-status">
+                            <span class="status-dot completed"></span>
+                            Completed Project
+                        </div>
+                        <h2 class="project-title">HertsLynx CAM (Connected & Automated Mobility) on Demand</h2>
+                        <div class="project-tabs">
+                            <div class="tab-controls">
+                                <button class="tab-btn active" data-tab="hertslynx-overview">Overview</button>
+                                <button class="tab-btn" data-tab="hertslynx-analysis">System Analysis</button>
+                                <button class="tab-btn" data-tab="hertslynx-implementation">Implementation</button>
+                                <button class="tab-btn" data-tab="hertslynx-partners">Partners</button>
+                            </div>
+
+                            <div class="tab-content">
+                                <!-- Overview Tab -->
+                                <div class="tab-pane active" id="hertslynx-overview">
+                                    <div class="content-grid">
+                                        <div class="main-content">
+                                            <div class="expandable-text">
+                                                <p class="preview-text">
+                                                    HertsLynx CAM on Demand was a funded project by Innovate UK, the Centre for Connected and Autonomous Vehicles (CCAV), and delivered in collaboration with Sustainicity, Siemens Mobility (PADAM), Hertfordshire County Council, and Fusion Processing.
+                                                </p>
+                                                <div class="full-text">
+                                                    <p>The project analysed the potential for autonomous bus mass transit services in the Maylands Business Park region of Hertfordshire. The study focused on identifying viable routes capable of accommodating current or near-term AV technologies without requiring significant infrastructure changes.</p>
+                                                    <p>The objective was to unlock the potential for CAM applications in similar environments. Our role involved enabling the application of System of Systems (SoS) analysis to related areas. An innovative System Readiness Level (SRL) analysis approach was applied to intelligent transportation systems, encompassing AVs, connectivity systems, fleet and traffic management, as well as user interface and booking systems.</p>
+                                                </div>
+                                                <button class="read-more-btn">Read More</button>
+                                            </div>
+                                        </div>
+                                        <div class="side-content">
+                                            <img src="img/HertsLynx.jpg" alt="HertsLynx Project" class="side-image">
+                                            <div class="tag-container">
+                                                <span class="tag">Autonomous Transport</span>
+                                                <span class="tag">System Analysis</span>
+                                                <span class="tag">Public Transit</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- System Analysis Tab -->
+                                <div class="tab-pane" id="hertslynx-analysis">
+                                    <div class="analysis-content">
+                                        <h4>System of Systems Analysis</h4>
+                                        <div class="analysis-grid">
+                                            <div class="analysis-item">
+                                                <h5>Autonomous Vehicle Systems</h5>
+                                                <ul>
+                                                    <li>Route feasibility assessment</li>
+                                                    <li>Technology requirements analysis</li>
+                                                    <li>Infrastructure compatibility study</li>
+                                                </ul>
+                                            </div>
+                                            <div class="analysis-item">
+                                                <h5>Connectivity Systems</h5>
+                                                <ul>
+                                                    <li>Communication infrastructure assessment</li>
+                                                    <li>Data flow analysis</li>
+                                                    <li>Network coverage evaluation</li>
+                                                </ul>
+                                            </div>
+                                            <div class="analysis-item">
+                                                <h5>Fleet Management</h5>
+                                                <ul>
+                                                    <li>Capacity planning</li>
+                                                    <li>Route optimization</li>
+                                                    <li>Schedule management</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Implementation Tab -->
+                                <div class="tab-pane" id="hertslynx-implementation">
+                                    <div class="implementation-details">
+                                        <div class="timeline">
+                                            <div class="timeline-item">
+                                                <h5>Phase 1: Route Analysis</h5>
+                                                <p>Comprehensive analysis of potential routes in Maylands Business Park</p>
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" data-progress="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <h5>Phase 2: Technology Assessment</h5>
+                                                <p>Evaluation of current and near-term AV technologies</p>
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" data-progress="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <h5>Phase 3: System Integration</h5>
+                                                <p>Integration planning for all system components</p>
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" data-progress="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Partners Tab -->
+                                <div class="tab-pane" id="hertslynx-partners">
+                                    <div class="partners-grid">
+                                        <div class="partner-item">
+                                            <h5>Innovate UK & CCAV</h5>
+                                            <p>Project funding and strategic oversight</p>
+                                        </div>
+                                        <div class="partner-item">
+                                            <h5>Siemens Mobility (PADAM)</h5>
+                                            <p>Technical implementation and mobility solutions</p>
+                                        </div>
+                                        <div class="partner-item">
+                                            <h5>Hertfordshire County Council</h5>
+                                            <p>Local authority and infrastructure support</p>
+                                        </div>
+                                        <div class="partner-item">
+                                            <h5>Fusion Processing</h5>
+                                            <p>Autonomous vehicle technology expertise</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Intelligent Systems Engineering Research Team (UH). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and panes
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding tab content
+                const tabId = button.getAttribute('data-tab');
+                const tabContent = button.closest('.project-tabs').querySelector(`#${tabId}`);
+                if (tabContent) {
+                    tabContent.classList.add('active');
+                }
+            });
+        });
+
+        // For expandable text
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const container = button.closest('.expandable-text');
+                const fullText = container.querySelector('.full-text');
+                const preview = container.querySelector('.preview-text');
+                const fadeOverlay = container.querySelector('.fade-overlay');
+
+                if (fullText.style.display === 'none' || !fullText.style.display) {
+                    fullText.style.display = 'block';
+                    preview.style.maxHeight = 'none';
+                    fadeOverlay.style.display = 'none';
+                    button.textContent = 'Read Less';
+                } else {
+                    fullText.style.display = 'none';
+                    preview.style.maxHeight = '100px';
+                    fadeOverlay.style.display = 'block';
+                    button.textContent = 'Read More';
+                }
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
