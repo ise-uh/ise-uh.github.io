@@ -31,6 +31,9 @@
     <title>Intelligent Systems Engineering Research Team</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <link rel="stylesheet" href="css/styles.css">
 
     <script type="application/ld+json">
     {
@@ -56,212 +59,6 @@
       }
     }
     </script>
-    
-    <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary-color: #1a237e;
-            --secondary-color: #0d47a1;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(26, 35, 126, 0.9), rgba(13, 71, 161, 0.9));
-            color: white;
-            padding: 100px 0;
-        }
-
-        .navbar {
-            background-color: var(--primary-color) !important;
-        }
-
-        .research-card {
-            transition: transform 0.3s ease;
-            margin-bottom: 20px;
-        }
-
-        .research-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .team-member img {
-            width: 161px;
-            height: 215px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .team-member {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .bio-text {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        /* Publication styles */
-        .publication-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .publication-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .publication-details h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .authors {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-        }
-
-        .venue {
-            color: #888;
-            font-size: 0.9rem;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        .abstract {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .publication-links {
-            margin-top: 15px;
-        }
-
-        .publication-links .btn {
-            margin-right: 10px;
-            margin-bottom: 5px;
-        }
-
-        /* Video styles */
-        .video-container {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .video-thumbnail {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .video-thumbnail img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .hero-logo {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            filter: brightness(0) invert(1); 
-        }
-        
-        @media (max-width: 768px) {
-            .hero-logo {
-                max-width: 200px;
-                margin: 0 auto 20px;
-                display: block;
-            }
-        }
-
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.7);
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .play-button:hover {
-            background: rgba(0, 0, 0, 0.9);
-        }
-
-        .play-icon {
-            color: white;
-            font-size: 24px;
-            line-height: 1;
-        }
-
-        /* Video Modal */
-        .video-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-        }
-
-        .video-modal-content {
-            position: relative;
-            width: 80%;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-
-        .close-video {
-            position: absolute;
-            right: 0;
-            top: -40px;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .video-embed {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            background: #000;
-        }
-
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -277,11 +74,12 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#team">Team</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">Research</a>
+                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="#publications">Publications</a>
                     </li>
@@ -311,7 +109,7 @@
     </section>
 
     <!-- Research Areas -->
-    <section id="research" class="section-padding">
+    <section id="research_themes" class="section-padding">
         <div class="container">
             <h2 class="text-center mb-5">Research Themes and Areas</h2>
             <div class="row">
@@ -319,20 +117,20 @@
                     <div class="card research-card">
                         <img src="img/arch.png" class="card-img-top" alt="Autonomous Systems">
                         <div class="card-body">
-    <h5 class="card-title">Autonomous Vehicles</h5>
-    <p class="card-text">Autonomous Vehicles (AVs) are systems that operate without (or with minimal) human intervention, making independent decisions to carry out predetermined missions. The ISE team specialises in various aspects of AVs and has achieved success in the following areas:</p>
-    <ul>
-        <li>System design of autonomous marine, aerial, and ground vehicles;</li>
-        <li>Motion planning and decision-making algorithms;</li>
-        <li>Collision avoidance;</li>
-        <li>Navigation and perception;</li>
-        <li>Control algorithms;</li>
-        <li>Machine learning in decision-making;</li>
-        <li>Non-conventional AVs;</li>
-        <li>Teleoperation and shared autonomy with humans;</li>
-        <li>Intelligent transportation systems.</li>
-    </ul>
-</div>
+                        <h5 class="card-title">Autonomous Vehicles</h5>
+                        <p class="card-text">Autonomous Vehicles (AVs) are systems that operate without (or with minimal) human intervention, making independent decisions to carry out predetermined missions. The ISE team specialises in various aspects of AVs and has achieved success in the following areas:</p>
+                        <ul>
+                            <li>System design of autonomous marine, aerial, and ground vehicles;</li>
+                            <li>Motion planning and decision-making algorithms;</li>
+                            <li>Collision avoidance;</li>
+                            <li>Navigation and perception;</li>
+                            <li>Control algorithms;</li>
+                            <li>Machine learning in decision-making;</li>
+                            <li>Non-conventional AVs;</li>
+                            <li>Teleoperation and shared autonomy with humans;</li>
+                            <li>Intelligent transportation systems.</li>
+                        </ul>
+                    </div>
                     </div>
                 </div>
 
@@ -515,41 +313,82 @@ He has hands-on experience with a range of industry-standard tools, including AN
         </div>
     </section>
 
+    <!-- Research Section -->
+<section id="research" class="section-padding">
+    <div class="container">
+        <h2 class="text-center mb-5">Research</h2>
+
+        <!-- MASS Project -->
+        <div class="research-item" data-aos="fade-up">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="img/arch.png" alt="MASS Project" class="img-fluid research-image">
+                </div>
+                <div class="col-md-8">
+                    <div class="project-status active">Active Project</div>
+                    <h3>Risk-Aware Motion Planning and Control of Maritime Autonomous Surface Ships (MASS)</h3>
+                    <div class="expandable-text">
+                        <p class="preview-text">
+                            Collision avoidance is a critical component of mission planning in all autonomous vehicles. The decision-making algorithms in MASS must adhere to the COLREGs (Convention on the International Regulations for Preventing Collisions at Sea) for obstacle avoidance and manoeuvres.
+                            <span class="fade-overlay"></span>
+                        </p>
+                        <div class="full-text">
+                            <p>However, implementing COLREGs within MASS presents significant challenges. The textual and somewhat ambiguous nature of COLREGs, which were primarily designed for human operators, has long been a barrier to effective algorithmic implementation. Recent advancements in explainable Artificial Intelligence (AI) and machine learning show promise in enabling human-like decision-making.</p>
+                            <p>This research investigates AI-based, risk-aware motion planning and collision avoidance algorithms for MASS.</p>
+                            <p>The developed algorithms integrate state-of-the-art AI solutions with classical and resilient local planning and control mechanisms, incorporating Line of Sight (LOS) and Cross Track Error (CTE) for optimal waypoint tracking and disturbance rejection. For the first time, the application of Large Language Models (LLMs) is proposed to ensure adherence to COLREGs. The proposed decision-making system introduces an innovative online risk index, considering Distance and Time to Closest Point of Approach (DCPA and TCPA), alongside other relevant indices, to maintain safe operational behaviour. With further development, text-to-rule-based decision-making algorithms hold promise in enhancing the safety of MASS. This research is in its early stages but has the potential to revolutionise safety in MASS and related applications. Plans are underway for the formal verification of the proposed algorithms.</p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HertsLynx Project -->
+        <div class="research-item" data-aos="fade-up">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="img/HertsLynx.jpg" alt="HertsLynx Project" class="img-fluid research-image">
+                </div>
+                <div class="col-md-8">
+                    <div class="project-status completed">Completed Project</div>
+                    <h3>HertsLynx CAM (Connected & Automated Mobility) on Demand</h3>
+                    <div class="expandable-text">
+                        <p class="preview-text">
+                            HertsLynx CAM on Demand was a funded project by Innovate UK, the Centre for Connected and Autonomous Vehicles (CCAV), and delivered in collaboration with Sustainicity, Siemens Mobility (PADAM), Hertfordshire County Council, and Fusion Processing.
+                            <span class="fade-overlay"></span>
+                        </p>
+                        <div class="full-text">
+                            <p>The project analysed the potential for autonomous bus mass transit services in the Maylands Business Park region of Hertfordshire. The study focused on identifying viable routes capable of accommodating current or near-term AV technologies without requiring significant infrastructure changes.</p>
+                            <p>The objective was to unlock the potential for CAM applications in similar environments. Our role involved enabling the application of System of Systems (SoS) analysis to related areas. An innovative System Readiness Level (SRL) analysis approach was applied to intelligent transportation systems, encompassing AVs, connectivity systems, fleet and traffic management, as well as user interface and booking systems.</p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Continue with other projects... -->
+
+    </div>
+</section>
+
+    
+
+
+
     <!-- Publications Section -->
     <section id="publications" class="section-padding">
         <div class="container">
             <h2 class="text-center mb-5">Recent Publications</h2>
+            <h4 class=" mb-5">2024</h4>
             <div class="row">
                 <div class="col-md-12">
                     <div class="publication-list">
                         <!-- Publication 1 -->
                         <div class="publication-card mb-4">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="video-container">
-                                        <!-- Video thumbnail with play button overlay -->
-                                        <div class="video-thumbnail">
-                                            <img src="img/vi.png" alt="Video thumbnail" class="img-fluid">
-                                            <button class="play-button" onclick="playVideo('video1')">
-                                                <i class="play-icon">▶</i>
-                                            </button>
-                                        </div>
-                                        <!-- Video modal -->
-                                        <div id="video1" class="video-modal">
-                                            <div class="video-modal-content">
-                                                <span class="close-video" onclick="closeVideo('video1')">&times;</span>
-                                                <div class="video-embed">
-                                                    <video id="videoPlayer1" width="100%" controls>
-                                                        <source src="video/llm.mp4" type="video/mp4">
-                                                        Your browser does not support the video tag.
-                                                    </video>
-                                                    <div class="video-placeholder">Video Player</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
+                                
+                                <div class="col-md-12">
                                     <div class="publication-details">
                                         <h4>Large Language Model-based Decision-making for COLREGs and the
                                             Control of Autonomous Surface Vehicles</h4>
@@ -562,7 +401,7 @@ He has hands-on experience with a range of industry-standard tools, including AN
                                         <div class="publication-links">
                                             <a href="https://arxiv.org/abs/2411.16587" class="btn btn-primary btn-sm">Paper PDF</a>
                                             <a href="#" class="btn btn-secondary btn-sm">Project Page</a>
-                                            <a href="#" class="btn btn-info btn-sm">Code</a>
+                        
                                         </div>
                                     </div>
                                 </div>
@@ -572,25 +411,7 @@ He has hands-on experience with a range of industry-standard tools, including AN
                         <!-- Publication 2 -->
                         <div class="publication-card mb-4">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="video-container">
-                                        <div class="video-thumbnail">
-                                            <img src="img/adpC.gif" alt="Video thumbnail" class="img-fluid">
-                                            <button class="play-button" onclick="playVideo('video2')">
-                                                <i class="play-icon">▶</i>
-                                            </button>
-                                        </div>
-                                        <div id="video2" class="video-modal">
-                                            <div class="video-modal-content">
-                                                <span class="close-video" onclick="closeVideo('video2')">&times;</span>
-                                                <div class="video-embed">
-                                                    <div class="video-placeholder">Video Player</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <div class="publication-details">
                                         <h4>Adaptive formation motion planning and control of autonomous underwater vehicles using deep reinforcement learning</h4>
                                         <p class="authors">Behnaz, H., Alireza, H., Pouria, S.</p>
@@ -599,7 +420,7 @@ He has hands-on experience with a range of industry-standard tools, including AN
                                         <div class="publication-links">
                                             <a href="https://ieeexplore.ieee.org/abstract/document/10214138" class="btn btn-primary btn-sm">Paper PDF</a>
                                             <a href="#" class="btn btn-secondary btn-sm">Project Page</a>
-                                            <a href="#" class="btn btn-info btn-sm">Code</a>
+                                        
                                         </div>
                                     </div>
                                 </div>
@@ -636,6 +457,11 @@ He has hands-on experience with a range of industry-standard tools, including AN
         </div>
     </section>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Footer -->
     <footer>
         <div class="container text-center">
@@ -646,89 +472,7 @@ He has hands-on experience with a range of industry-standard tools, including AN
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom JS -->
-    <script>
-        // Bio Toggle Function
-        function toggleBio(bioId) {
-            const bioElement = document.getElementById(bioId);
-            const allBios = document.querySelectorAll('.bio-text');
-            
-            // Close all other open bios
-            allBios.forEach(bio => {
-                if (bio.id !== bioId && bio.style.display !== 'none') {
-                    bio.style.display = 'none';
-                }
-            });
-            
-            // Toggle the clicked bio
-            if (bioElement.style.display === 'none') {
-                bioElement.style.display = 'block';
-            } else {
-                bioElement.style.display = 'none';
-            }
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-
-        // Navbar color change on scroll
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                document.querySelector('.navbar').style.backgroundColor = 'rgba(26, 35, 126, 0.9)';
-            } else {
-                document.querySelector('.navbar').style.backgroundColor = 'rgba(26, 35, 126, 1)';
-            }
-        });
-
-        // Video Modal Functions
-        function playVideo(modalId, videoSrc) {
-            const modal = document.getElementById(modalId);
-            const videoPlayer = document.getElementById('videoPlayer1');
-            if (modal && videoPlayer) {
-                modal.style.display = 'block';
-                videoPlayer.src = videoSrc;
-                videoPlayer.play();
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeVideo(modalId) {
-            const modal = document.getElementById(modalId);
-            const videoPlayer = document.getElementById('videoPlayer1');
-            if (modal && videoPlayer) {
-                modal.style.display = 'none';
-                videoPlayer.pause();
-                videoPlayer.currentTime = 0;
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('video-modal')) {
-                const videoPlayer = document.getElementById('videoPlayer1');
-                event.target.style.display = 'none';
-                if (videoPlayer) {
-                    videoPlayer.pause();
-                    videoPlayer.currentTime = 0;
-                }
-                document.body.style.overflow = 'auto';
-            }
-        }
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
