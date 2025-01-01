@@ -109,20 +109,20 @@ document.querySelectorAll('.tab-btn').forEach(button => {
 document.querySelectorAll('.read-more-btn').forEach(button => {
     button.addEventListener('click', () => {
         const container = button.closest('.expandable-text');
-        const fullText = container.querySelector('.full-text');
         const preview = container.querySelector('.preview-text');
         const fadeOverlay = container.querySelector('.fade-overlay');
-
-        if (fullText.style.display === 'none' || !fullText.style.display) {
-            fullText.style.display = 'block';
-            preview.style.maxHeight = 'none';
-            fadeOverlay.style.display = 'none';
-            button.textContent = 'Read Less';
-        } else {
-            fullText.style.display = 'none';
-            preview.style.maxHeight = '100px';
-            fadeOverlay.style.display = 'block';
+        const fullText = container.querySelector('.full-text');
+        
+        if (preview.classList.contains('expanded')) {
+            preview.classList.remove('expanded');
+            fadeOverlay.classList.remove('hidden');
             button.textContent = 'Read More';
+            fullText.style.display = 'none';
+        } else {
+            preview.classList.add('expanded');
+            fadeOverlay.classList.add('hidden');
+            button.textContent = 'Read Less';
+            fullText.style.display = 'block';
         }
     });
 });
